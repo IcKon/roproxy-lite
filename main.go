@@ -48,7 +48,6 @@ func requestHandler(ctx *fasthttp.RequestCtx) {
 	defer fasthttp.ReleaseResponse(response)
 
 	body := response.Body()
-	body.TestA := ctx.Request.Header.Peek("Roblox-Id")
 	ctx.SetBody(body)
 	ctx.SetStatusCode(response.StatusCode())
 	response.Header.VisitAll(func (key, value []byte) {
